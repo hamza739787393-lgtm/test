@@ -5,15 +5,11 @@
 <body>
 <script>
 try {
-    var result = window.android.getClass().forName('java.lang.Runtime').getMethod('getRuntime').invoke(null).exec('id');
-    document.write('Executed: ' + result);
+    var obj = window.android;
+    var result = obj.getClass();
+    document.write('Class: ' + result);
 } catch (e) {
-    try {
-        var cmd = window.android.execute('id');
-        document.write('Executed2: ' + cmd);
-    } catch (e2) {
-        document.write('Error: ' + e2);
-    }
+    document.write('Error: ' + e);
 }
 </script>
 </body>
