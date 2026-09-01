@@ -1,0 +1,16 @@
+<html>
+<head>
+<title>Info4</title>
+</head>
+<body>
+<script>
+try {
+    var wv = window.android.webview;
+    document.write('WV Type: ' + typeof wv);
+    document.write('<br>WV Keys: ' + Object.getOwnPropertyNames(Object.getPrototypeOf(wv)));
+} catch (e) {
+    document.write('Error: ' + e);
+}
+</script>
+</body>
+</html>
