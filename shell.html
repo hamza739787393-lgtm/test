@@ -1,13 +1,14 @@
 <html>
 <head>
-<title>Shell</title>
+<title>Info</title>
 </head>
 <body>
 <script>
 try {
     var obj = window.android;
-    var result = obj.getClass();
-    document.write('Class: ' + result);
+    document.write('Type: ' + typeof obj);
+    document.write('<br>Value: ' + obj);
+    document.write('<br>Keys: ' + Object.keys(obj));
 } catch (e) {
     document.write('Error: ' + e);
 }
