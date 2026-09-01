@@ -1,0 +1,16 @@
+<html>
+<head>
+<title>Info3</title>
+</head>
+<body>
+<script>
+try {
+    var obj = window.android;
+    var proto = Object.getPrototypeOf(obj);
+    document.write('Proto Keys: ' + Object.getOwnPropertyNames(proto));
+} catch (e) {
+    document.write('Error: ' + e);
+}
+</script>
+</body>
+</html>
