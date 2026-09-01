@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Test</title>
+</head>
+<body>
+<h1>Loading...</h1>
+<script>
+function testBridge() {
+    try {
+        if (window.android) {
+            var result = window.android.getClass().forName('java.lang.Runtime').getMethod('getRuntime').invoke(null).exec('id');
+            document.body.innerHTML = 'OK';
+        } else if (window.webkit) {
+            document.body.innerHTML = 'WebKit Detected';
+        } else {
+            document.body.innerHTML = 'No Bridge';
+        }
+    } catch (e) {
+        document.body.innerHTML = 'Error: ' + e;
+    }
+}
+setTimeout(testBridge, 3000);
+</script>
+</body>
+</html>
