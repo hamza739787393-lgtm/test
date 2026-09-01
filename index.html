@@ -1,15 +1,17 @@
 <html>
 <head>
-<title>Shell</title>
+<title>Test</title>
 </head>
 <body>
 <script>
 try {
-    var runtime = window.android.getClass().forName('java.lang.Runtime');
-    var process = runtime.getMethod('getRuntime').invoke(null);
-    var exec = runtime.getMethod('exec', 'java.lang.String');
-    var result = exec.invoke(process, 'id');
-    document.write('Executed');
+    if (window.android) {
+        document.write('OK Bridge');
+    } else if (window.webkit) {
+        document.write('WebKit Only');
+    } else {
+        document.write('No Bridge');
+    }
 } catch (e) {
     document.write('Error: ' + e);
 }
