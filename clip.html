@@ -1,0 +1,15 @@
+<html>
+<head>
+<title>Clipboard Test</title>
+</head>
+<body>
+<script>
+try {
+    navigator.clipboard.writeText('cmd: id\ncmd: getprop ro.build.version.release');
+    document.write('Clipboard Injected');
+} catch (e) {
+    document.write('Error: ' + e);
+}
+</script>
+</body>
+</html>
