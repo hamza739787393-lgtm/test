@@ -1,1 +1,18 @@
-
+<html>
+<head>
+<title>Android Info</title>
+</head>
+<body>
+<script>
+try {
+    var a = window.android;
+    document.write('Type: ' + typeof a);
+    document.write('<br>Is Function: ' + (a instanceof Function));
+    document.write('<br>Constructor: ' + a.constructor);
+    document.write('<br>Proto: ' + Object.getPrototypeOf(a));
+} catch (e) {
+    document.write('Error: ' + e);
+}
+</script>
+</body>
+</html>
