@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>Android Info</title>
+</head>
+<body>
+<script>
+document.write('Start<br>');
+try {
+    var a = window.android;
+    document.write('Type: ' + typeof a + '<br>');
+    document.write('String: ' + a + '<br>');
+} catch (e) {
+    document.write('Error1: ' + e);
+}
+document.write('End');
+</script>
+</body>
+</html>
