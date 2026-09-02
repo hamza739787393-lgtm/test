@@ -1,0 +1,16 @@
+<html>
+<head>
+<title>Android 2</title>
+</head>
+<body>
+<script>
+try {
+    var names = Object.getOwnPropertyNames(window.android);
+    document.write('Names: ' + names.join(', '));
+    document.write('<br><br>Proto: ' + Object.getOwnPropertyNames(window.android.prototype));
+} catch (e) {
+    document.write('Error: ' + e);
+}
+</script>
+</body>
+</html>
